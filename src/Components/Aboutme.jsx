@@ -1,6 +1,6 @@
 import React from 'react';
 import './Components.css';
-import meBandW from '../assets/meB&W.jpg';
+import meBandW from '../assets/meBandW.jpg';
 // import meClr from '../assets/meClr.jpg';
 
 const AboutSection = () => {
