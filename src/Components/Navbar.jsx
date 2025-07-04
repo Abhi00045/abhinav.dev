@@ -10,14 +10,6 @@ const Navbar = () => {
     fontFamily: "sans-serif",
   };
 
-  const logoStyle = {
-    fontWeight: "bold",
-    fontSize: "20px",
-    display: "flex",
-    alignItems: "center",
-    gap: "10px",
-  };
-
   const navLinks = {
     display: "flex",
     gap: "30px",
@@ -36,10 +28,6 @@ const Navbar = () => {
 
   return (
     <nav style={navStyle}>
-      <div style={logoStyle}>
-        <img src="/logo.svg" alt="Logo" height="24" />
-        Personal
-      </div>
       <div style={navLinks}>
         <a href="#about">About Me</a>
         <a href="#skills">Skills</a>

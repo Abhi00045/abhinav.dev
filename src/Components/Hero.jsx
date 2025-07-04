@@ -1,4 +1,5 @@
 import React from "react";
+import { FaSquareXTwitter } from "react-icons/fa6";
 
 const Hero = () => {
   const container = {
@@ -65,18 +66,18 @@ const Hero = () => {
     <section style={container}>
       <div style={left}>
         <h1 style={heading}>
-          Hello I’am <span style={highlight}>Evren Shah.</span> <br />
-          <span style={highlight}>Frontend</span>{" "}
+          Hello I’am <span style={highlight}>Abhinav Reddy Rajidi</span> <br />
+          <span style={highlight}>Mern Stack</span>{" "}
           <span style={outlineText}>Developer</span> <br />
           Based In <span style={highlight}>India.</span>
         </h1>
         <p style={paragraph}>
-          I'm Evren Shah Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-          Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-          when an unknown printer took a galley of type and scrambled it to specimen book.
+        I create  responsive websites.
+        Building robust web applications with Typescript, Next.js,
+        MongoDB, Express.js, React, and Node.js
         </p>
         <div style={socials}>
-          <div style={icon}>f</div>
+          <div style={icon}><FaSquareXTwitter /></div>
           <div style={icon}>⛁</div>
           <div style={icon}>🐦</div>
           <div style={icon}>💬</div>
@@ -88,6 +89,7 @@ const Hero = () => {
           alt="developer"
           style={{ width: "100%", height: "auto" }}
         />
+        
       </div>
     </section>
   );
