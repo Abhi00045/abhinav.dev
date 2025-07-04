@@ -3,7 +3,7 @@ import { FaSquareXTwitter } from "react-icons/fa6";
 import { FaDiscord } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
-import image from "../assets/image.png"
+import image from "../assets/okay.png"
 
 const Hero = () => {
   const container = {

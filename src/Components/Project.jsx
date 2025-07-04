@@ -1,9 +1,9 @@
 import React from 'react';
 import './Components.css';
-import designAppImg from '../assets/design-app.png';   // Replace with your actual image path
-import ecommerceImg from '../assets/ecommerce.png';
-import videoToolImg from '../assets/video.png';
-import lmsAppImg from '../assets/lms.png';
+import BlogAppli from '../assets/BlogAppli.png'  
+// import ecommerceImg from '../assets/ecommerce.png';
+// import videoToolImg from '../assets/video.png';
+// import lmsAppImg from '../assets/lms.png';
 
 const projects = [
   {
@@ -18,16 +18,27 @@ const projects = [
     ],
   },
   {
-    title: 'Blog Platform',
-    image: ecommerceImg,
-    description:
-      'A robust and scalable ecommerce platform built for a fashion brand using MERN stack and Vite. Includes admin management, payments, email services, and Dockerized deployment.',
-    tags: [
-      'vite', 'React', 'typescript', 'shadcn/ui', 'tailwind',
-      'RTK-Query', 'chart.js', 'MERN', 'Multer', 'Nodemailer',
-      'RabbitMQ', 'Docker', 'razorpay', 'PDFKit',
-    ],
-  },
+  title: 'Blog Platform',
+  image: BlogAppli,
+  description:
+    'A full-stack blog publishing platform built with React.js, Node.js, Express, and MongoDB. Features include secure user auth with Clerk & JWT, rich blog CRUD, and styled UI using Tailwind CSS.',
+  tags: [
+    'React.js',
+    'Node.js',
+    'Express.js',
+    'MongoDB',
+    'React Router',
+    'Tailwind CSS',
+    'Clerk',
+    'JWT',
+    'bcrypt.js',
+    'dotenv',
+    'CORS',
+    'Nodemon',
+    'Postman',
+  ],
+},
+,
   {
     title: 'Bookstore',
     image: videoToolImg,
