@@ -1,17 +1,25 @@
 import React from "react";
 import { FaSquareXTwitter } from "react-icons/fa6";
+import { FaDiscord } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa6";
+import { FaGithub } from "react-icons/fa";
+import image from "../assets/image.png"
 
 const Hero = () => {
   const container = {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    padding: "60px 40px",
+    paddingTop: "70px",
+    paddingBottom: "10px",
+    paddingLeft: "40px",
+    paddingRight: "40px",
     fontFamily: "sans-serif",
+    marginBottom: "0",
   };
 
   const left = {
-    maxWidth: "50%",
+    width: "60%",
   };
 
   const heading = {
@@ -77,18 +85,19 @@ const Hero = () => {
         MongoDB, Express.js, React, and Node.js
         </p>
         <div style={socials}>
-          <div style={icon}><FaSquareXTwitter /></div>
-          <div style={icon}>⛁</div>
-          <div style={icon}>🐦</div>
-          <div style={icon}>💬</div>
+          <a href="https://x.com/rabhinavreddie"><div style={icon}><FaSquareXTwitter /></div></a>
+          <a href="https://discord.com/channels/@me"><div style={icon}><FaDiscord /></div></a>
+          <a href="https://www.linkedin.com/in/abhinavreddy-rajidi-988633280/"><div style={icon}><FaLinkedin /></div></a>
+          <a href="https://github.com/Abhi00045"><div style={icon}><FaGithub /></div></a>
         </div>
       </div>
       <div style={right}>
         <img
-          src="/developer-illustration.svg"
+          src={image}
           alt="developer"
-          style={{ width: "100%", height: "auto" }}
+          style={{ width: "80%", height: "auto" }}
         />
+        <hr />
         
       </div>
     </section>

@@ -1,4 +1,5 @@
 import React from "react";
+import '../Components/Components.css'
 
 const Navbar = () => {
   const navStyle = {
@@ -8,6 +9,15 @@ const Navbar = () => {
     padding: "20px 40px",
     borderBottom: "1px solid #eaeaea",
     fontFamily: "sans-serif",
+
+    position: "fixed",
+    top: "0",
+    left: "0",
+    right: "0",
+    backgroundColor: "white",
+    zIndex: "1000",
+    boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
+    transition: "background-color 0.3s ease, box-shadow 0.3s ease",
   };
 
   const navLinks = {
@@ -15,6 +25,7 @@ const Navbar = () => {
     gap: "30px",
     fontSize: "16px",
     fontWeight: "500",
+    textDecoration: "none",
   };
 
   const resumeBtn = {
