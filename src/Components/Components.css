@@ -170,22 +170,30 @@ a{
 //////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////// ======= project section */
 .projects-section {
-  background-color: #0f0f0f;
-  padding: 4rem 1.5rem;
+  background-color: #ffffff;
+  padding: 20px 80px 10px 80px;
   color: white;
+  
 }
 
 .projects-title {
+  margin-left: 80px;
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 2rem;
-  text-align: center;
+  text-align:start;
+  color: #1e1e1e;
 }
 
 .projects-grid {
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: 1fr;
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  
 }
 
 @media (min-width: 768px) {
@@ -193,8 +201,19 @@ a{
     grid-template-columns: 1fr 1fr;
   }
 }
-
+        .github-icon {
+          position: absolute;
+          bottom: 15px;
+          right: 20px;
+          color: #fffefe;
+          font-size: 1.5rem;
+          transition: color 0.3s;
+        }
+        .github-icon:hover {
+          color: #ded7d7;
+        }
 .project-card {
+  width: 45%;
   background-color: #1a1a1a;
   border: 1px solid #333;
   border-radius: 1rem;

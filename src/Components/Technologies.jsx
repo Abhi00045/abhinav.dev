@@ -34,7 +34,7 @@ const SkillsSection = () => {
   return (
     <section className="skills-section" id="skills">
       <div className="skills-container">
-        <h2 className="skills-title">Current Technologies</h2>
+        <h2 className="skills-title">Skills 🛠️</h2>
         <p className="skills-subtitle">The Power behind my projects</p>
         <div className="skills-grid">
           {skills.map((skill, index) => (

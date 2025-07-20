@@ -11,9 +11,9 @@ const Hero = () => {
     justifyContent: "space-between",
     alignItems: "center",
     paddingTop: "70px",
-    paddingBottom: "10px",
-    paddingLeft: "40px",
-    paddingRight: "40px",
+    paddingBottom: "30px",
+    paddingLeft: "70px",
+    paddingRight: "70px",
     fontFamily: "sans-serif",
     marginBottom: "0",
   };

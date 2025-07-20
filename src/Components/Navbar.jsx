@@ -43,7 +43,7 @@ const Navbar = () => {
         <a href="#about">About Me</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Project</a>
-        <a href="#contact">Contact Me</a>
+        {/* <a href="#contact">Contact Me</a> */}
       </div>
       <button style={resumeBtn}>Resume ⬇</button>
     </nav>
