@@ -2,11 +2,12 @@ import React from 'react';
 import '../Components/Components.css'
 import { FaGithub } from 'react-icons/fa';
 import BlogAppli from '../assets/BlogAppli.png';
+import Aiplly from '../assets/aiApply.png'
 
 const projects = [
   {
     title: 'Ai-powered Job Application',
-    image: BlogAppli,
+    image: Aiplly,
     description:
       'A sleek, modern SaaS graphic design app built with Next.js, TypeScript, and Tailwind CSS. Create and customize templates, manipulate text and shapes, and access powerful AI tools for background removal and image generation.',
     tags: [
@@ -14,7 +15,7 @@ const projects = [
       'auth.js', 'drizzle-orm', 'hono', 'postgresql', 'ai-background-remover',
       'ai-image-generator',
     ],
-    repoLink: 'https://github.com/yourusername/ai-job-application',
+    repoLink: 'https://github.com/Abhi00045/AIpply.git',
   },
   {
     title: 'Blog Platform',
@@ -26,32 +27,32 @@ const projects = [
       'React Router', 'Tailwind CSS', 'Clerk', 'JWT',
       'bcrypt.js', 'dotenv', 'CORS', 'Nodemon', 'Postman',
     ],
-    repoLink: 'https://github.com/yourusername/blog-platform',
+    repoLink: 'https://github.com/Abhi00045/Blog.git',
   },
-  {
-    title: 'Blog Platform',
-    image: BlogAppli,
-    description:
-      'A full-stack blog publishing platform built with React.js, Node.js, Express, and MongoDB. Features include secure user auth with Clerk & JWT, rich blog CRUD, and styled UI using Tailwind CSS.',
-    tags: [
-      'React.js', 'Node.js', 'Express.js', 'MongoDB',
-      'React Router', 'Tailwind CSS', 'Clerk', 'JWT',
-      'bcrypt.js', 'dotenv', 'CORS', 'Nodemon', 'Postman',
-    ],
-    repoLink: 'https://github.com/yourusername/blog-platform',
-  },
-  {
-    title: 'Blog Platform',
-    image: BlogAppli,
-    description:
-      'A full-stack blog publishing platform built with React.js, Node.js, Express, and MongoDB. Features include secure user auth with Clerk & JWT, rich blog CRUD, and styled UI using Tailwind CSS.',
-    tags: [
-      'React.js', 'Node.js', 'Express.js', 'MongoDB',
-      'React Router', 'Tailwind CSS', 'Clerk', 'JWT',
-      'bcrypt.js', 'dotenv', 'CORS', 'Nodemon', 'Postman',
-    ],
-    repoLink: 'https://github.com/yourusername/blog-platform',
-  },
+  // {
+  //   title: 'Blog Platform',
+  //   image: BlogAppli,
+  //   description:
+  //     'A full-stack blog publishing platform built with React.js, Node.js, Express, and MongoDB. Features include secure user auth with Clerk & JWT, rich blog CRUD, and styled UI using Tailwind CSS.',
+  //   tags: [
+  //     'React.js', 'Node.js', 'Express.js', 'MongoDB',
+  //     'React Router', 'Tailwind CSS', 'Clerk', 'JWT',
+  //     'bcrypt.js', 'dotenv', 'CORS', 'Nodemon', 'Postman',
+  //   ],
+  //   repoLink: 'https://github.com/yourusername/blog-platform',
+  // },
+  // {
+  //   title: 'Blog Platform',
+  //   image: Aiplly,
+  //   description:
+  //     'A full-stack blog publishing platform built with React.js, Node.js, Express, and MongoDB. Features include secure user auth with Clerk & JWT, rich blog CRUD, and styled UI using Tailwind CSS.',
+  //   tags: [
+  //     'React.js', 'Node.js', 'Express.js', 'MongoDB',
+  //     'React Router', 'Tailwind CSS', 'Clerk', 'JWT',
+  //     'bcrypt.js', 'dotenv', 'CORS', 'Nodemon', 'Postman',
+  //   ],
+  //   repoLink: 'https://github.com/yourusername/blog-platform',
+  // },
 ];
 
 const ProjectsSection = () => {
