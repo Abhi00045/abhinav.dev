@@ -45,14 +45,14 @@ a {
   color: black;
 }
 
-.resume-btn {
+/* .resume-btn {
   background: black;
   color: white;
   padding: 10px 18px;
   border-radius: 6px;
   cursor: pointer;
   font-weight: 600;
-}
+} */
 
 .menu-icon {
   display: none;
@@ -381,6 +381,10 @@ a {
 
 .right {
   max-width: 45%;
+}
+.right img{
+  border-radius: 25px;
+  color: #000;
 }
 
 /* ---------------------------------------------- */

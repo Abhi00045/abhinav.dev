@@ -11,14 +11,16 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="nav-left">
         <a href="#about">About Me</a>
+        <hr />
         <a href="#skills">Skills</a>
+        <hr />
         <a href="#projects">Project</a>
         {/* <a href="#contact">Contact Me</a> */}
       </div>
 
-      <div className="resume-desktop">
+      {/* <div className="resume-desktop">
         <button className="resume-btn">Resume ⬇</button>
-      </div>
+      </div> */}
 
       <div className="menu-icon" onClick={toggleMenu}>
         {menuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
@@ -29,7 +31,7 @@ const Navbar = () => {
           <a onClick={toggleMenu} href="#about">About Me</a>
           <a onClick={toggleMenu} href="#skills">Skills</a>
           <a onClick={toggleMenu} href="#projects">Project</a>
-          <button className="resume-btn">Resume ⬇</button>
+          {/* <button className="resume-btn">Resume ⬇</button> */}
         </div>
       )}
     </nav>

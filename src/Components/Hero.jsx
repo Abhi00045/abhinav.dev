@@ -94,11 +94,11 @@ const Hero = () => {
       </div>
       <div className="right">
         <img
-          src={image}
+          src='https://64.media.tumblr.com/d49419c0d1bd888939252a3277d54295/5ad83a192c0f9455-9c/s500x750/f40a14dfbf1c0af07c247f71651d703ea0651b79.gif'
           alt="developer"
           style={{ width: "80%", height: "auto" }}
         />
-        <hr />
+        {/* <hr /> */}
         
       </div>
     </section>
