@@ -31,7 +31,7 @@ const Navbar = () => {
           <a onClick={toggleMenu} href="#about">About Me</a>
           <a onClick={toggleMenu} href="#skills">Skills</a>
           <a onClick={toggleMenu} href="#projects">Project</a>
-          {/* <button className="resume-btn">Resume ⬇</button> */}
+          <button className="resume-btn">Resume ⬇</button>
         </div>
       )}
     </nav>
