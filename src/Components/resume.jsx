@@ -20,7 +20,6 @@ const ResumeCTA = () => {
       </div> */}
 
       <div className="footer flex justify-center" >
-        <img src="https://64.media.tumblr.com/9f71811b188248bd7fb217a9e915b566/tumblr_n3p1a3E6V31szb9vao1_1280.gif" className='w-60' alt="" />
         <pre>Built with 🤍 &lt;/&gt; ☕</pre>
       </div>
     </div>

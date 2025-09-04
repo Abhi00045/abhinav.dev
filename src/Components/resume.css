@@ -1,6 +1,6 @@
 .resume-cta-container {
-    background-color: #ffffff;
-    color: #201e1e;
+    background-color: #2a2a2a;
+    color: #ffffff;
     text-align: center;
     padding: 4rem 2rem;
     position: relative;
@@ -18,7 +18,7 @@
     margin-bottom: 0.5rem;
   }
   .resume-cta-text .main-line :hover{
-    color: #444;
+    color: #c9c5c5;
     font-size:  1.82rem ;
   }
   

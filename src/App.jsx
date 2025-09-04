@@ -42,7 +42,6 @@ const App = ()=>{
       className="h-screen w-screen" //this is porbably main totally works with useRef
     >
         <img src={bat} ref={cursor} className="w-20 fixed" alt="" />
-        <Navbar/>
   <Hero/>
   {/* <Technologies/> */}
   <SkillsSection/>

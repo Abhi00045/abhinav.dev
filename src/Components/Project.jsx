@@ -142,7 +142,7 @@ const ProjectsSection = () => {
                     <span className="tag" key={i}>{tag}</span>
                   ))}
                 </div>
-                <a
+                {/* <a
                   href={project.repoLink}
                   className="github-icon"
                   target="_blank"
@@ -150,7 +150,7 @@ const ProjectsSection = () => {
                   title="View on GitHub"
                 >
                   <FaGithub />
-                </a>
+                </a> */}
               </div>
             </div>
           ))}
