@@ -6,7 +6,7 @@ import React from 'react'
 function Nav() {
   return (
     <>
-   <nav className='flex justify-between'>
+   <nav className='flex justify-between p-1.5'>
      <div className='flex gap-1 border-b-blue-950'>
         <p>Local Time : 
         </p><LocalTime/>

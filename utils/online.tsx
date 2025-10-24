@@ -6,7 +6,7 @@ const Available = () => {
       <span className="animate-pulse">
         <GoDotFill />
       </span>
-      <pre>Open to work</pre>
+      <pre>Available</pre> //need to collaborate with discord
     </div>
   )
 }
