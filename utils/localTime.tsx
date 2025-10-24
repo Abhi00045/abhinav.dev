@@ -13,8 +13,10 @@ export const LocalTime = () => {
 
 
     return(
+        <>
         <div>
             {Time.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})}
         </div>
+        </>
     )
 }

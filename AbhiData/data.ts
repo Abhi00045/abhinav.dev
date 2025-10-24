@@ -45,3 +45,5 @@ const SocialLinks = [
     }
 ]
 
+
+export {image,Name,selfRole,shortBio,About,SocialLinks}
