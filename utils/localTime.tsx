@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export const useLocalTime = () => {
+export const LocalTime = () => {
 
     const[Time , setLocalTime]=useState(new Date())
 
@@ -14,7 +14,7 @@ export const useLocalTime = () => {
 
     return(
         <div>
-            {Time.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit', second: '2-digit'})}
+            {Time.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})}
         </div>
     )
 }
