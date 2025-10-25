@@ -14,9 +14,9 @@ export const LocalTime = () => {
 
     return(
         <>
-        <div>
+        <p>
             {Time.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})}
-        </div>
+        </p>
         </>
     )
 }
