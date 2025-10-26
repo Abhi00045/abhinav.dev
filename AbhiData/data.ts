@@ -1,7 +1,4 @@
 
-
-
-
 const image = "/Assets/pfp.jpg"
 
 const Name = "Abhinav Reddy Rajidi"
@@ -26,23 +23,22 @@ const SocialLinks = [
     {
         id:1,
         name:"Twitter",
-        social:"x.com/abhinav",
-        icon:
+        social:"https://x.com/abhilostsoul",
     },
     {
         id:1,
         name:"Linkdin",
-        social:"x.com"
+        social:"linkdin.com",
     },
     {
-        id:1,
+        id:2,
         name:"Github",
-        social:"x.com"
+        social:"https://github.com/Abhi00045"
     },
     {
-        id:1,
+        id:3,
         name:"Discord",
-        social:"x.com"
+        social:"discord.com"
     }
 ]
 
