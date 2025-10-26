@@ -26,7 +26,8 @@ const SocialLinks = [
     {
         id:1,
         name:"Twitter",
-        social:"x.com"
+        social:"x.com/abhinav",
+        icon:
     },
     {
         id:1,
