@@ -48,7 +48,7 @@ function Projects() {
                                 <div id="upper-title">
                                     <p>{project.name}</p>
                                 </div>
-                                <div id="upper-source">
+                                <div id="upper-source" className='flex flex-row gap-0.5 '>
                                     <button onClick={() => setPreview(!preview)}>
 
                                         {preview?<FaRegEye/>:<FaRegEyeSlash/>}

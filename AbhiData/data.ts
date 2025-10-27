@@ -5,7 +5,7 @@ const Name = "Abhinav Reddy Rajidi"
 
 const selfRole = "Software Developer"
 
-const shortBio = "I create responsive websites. Building robust web applications with Typescript, Next.js, MongoDB, Express.js, React, and Node.js"
+const shortBio = "Hyderabad, India"
 
 const About = `
 

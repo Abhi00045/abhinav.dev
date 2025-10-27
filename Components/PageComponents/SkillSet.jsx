@@ -100,15 +100,15 @@ const SkillSet = () => {
 ]
   
   return (
-     <section id="skills" className="py-5  bg-white dark:bg-black transition-colors duration-300">
+     <section id="skills" className="p-5 pl-7 m-3.5 bg-white/90 dark:bg-black/15  h-full w-full bg-white-900 rounded-xl bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-7 border border-gray-50 inset-0 ">
       <div className="">
         <h2 className="text-2xl font-bold mb-6 text-black dark:text-white transition-colors duration-300">
           Skills
         </h2>
           <div className="space-y-2 flex flex-row flex-wrap gap-2">
-          {Skills.map((category, Index) => (
+          {Skills.map((category, Index) => ( 
             <div key={Index} className="space-y-3 ">              
-              <div className="flex flex-wrap flex-row items-center gap-3  border border-gray-200 dark:border-white/10 p-3 rounded-lg bg-white dark:bg-transparent transition-colors duration-300 hover:bg-gray-50 dark:hover:bg-white/5 w-fit cursor-pointer">
+              <div className="flex flex-wrap flex-row items-center gap-3  border border-gray-200 dark:border-white/19 p-3 rounded-lg bg-white dark:bg-transparent transition-colors duration-300 hover:bg-gray-50 dark:hover:bg-white/10 w-fit cursor-pointer">
                 <h3 className="text-lg font-bold text-black dark:text-white transition-colors duration-300">
                 {category.text}
               </h3>

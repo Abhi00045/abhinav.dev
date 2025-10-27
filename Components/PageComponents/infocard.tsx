@@ -4,8 +4,8 @@ import React from 'react'
 
 export function InfoCard() {
   return (<>
-    <div className='flex flex-col gap-1.5  bg-white dark:bg-black transition-colors duration-300 max-w-4.5xl mx-auto'>
-      <h2 className=" text-2xl font-bold mb-6 text-black dark:text-white transition-colors duration-300">
+    <div className='flex flex-col gap-1.5 p-5 pl-7 m-3.5  h-full w-full bg-white-900 rounded-xl bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-7 border border-gray-50 inset-0bg-white/90 dark:bg-black/15'>
+      <h2 className=" text-2xl font-bold mb-6 ">
           About me
         </h2>
         <p>My name is Abhinav Reddy Rajidi, and I’m a software engineer and full-stack developer from Hyderabad. I build scalable, high-performance applications and platforms with a passion for great design, speed, and reliability.</p>
