@@ -9,6 +9,13 @@ import { TbBrandFramerMotion } from "react-icons/tb";
 import { SiGreensock } from "react-icons/si";
 import { IoLogoNodejs } from "react-icons/io";
 import { SiExpress } from "react-icons/si";
+import { DiMongodb } from "react-icons/di";
+import { GrGithub } from "react-icons/gr";
+import { AiOutlinePython } from "react-icons/ai";
+import { SiPostman } from "react-icons/si";
+import { FaJava } from "react-icons/fa6";
+import { DiDocker } from "react-icons/di";
+import { FaFigma } from "react-icons/fa6";
 
 const SkillSet = () => {
 
@@ -71,26 +78,30 @@ const SkillSet = () => {
     text: "ExpressJS" 
   },
   // { id: 14, icon: BiLogoPostgresql, text: "PostgreSQL" },
-  // { id: 15, icon: SiMongodb, text: "MongoDB" },
+  { 
+    id: 15, 
+    icon: <DiMongodb />, 
+    text: "MongoDB" 
+  },
 //   { id: 16, icon: SiRedis, text: "Redis" },
   // { id: 17, icon: SiPrisma, text: "Prisma" },
-  // { id: 18, icon: SiPostman, text: "Postman" },
+  { id: 18, icon: <SiPostman />, text: "Postman" },
   // { id: 19, icon: FaGitAlt, text: "Git" },
-  // { id: 20, icon: FaGithub, text: "GitHub" },
-  // { id: 21, icon: FaPython, text: "Python" },
-  // { id: 22, icon: RiJavaLine, text: "Java" },
+  { id: 20, icon: <GrGithub />, text: "GitHub" },
+  { id: 21, icon: <AiOutlinePython />, text: "Python" },
+  { id: 22, icon: <FaJava />, text: "Java" },
 //   { id: 23, icon: TbHexagonLetterC, text: "C" },
 //   { id: 24, icon: TbBrandCpp, text: "C++" },
   // { id: 25, icon: BsFiletypeSql, text: "SQL" },
-  // { id: 26, icon: FaDocker, text: "Docker" },
+  { id: 26, icon: <DiDocker />, text: "Docker" },
   // { id: 27, icon: VscTerminalLinux, text: "Linux" },
   // { id: 28, icon: SiVercel, text: "Vercel" },
-//   { id: 29, icon: PiFigmaLogoBold, text: "Figma" },
+  { id: 29, icon: <FaFigma />, text: "Figma" },
 ]
   
   return (
-     <section id="skills" className="py-4 px-6 bg-white dark:bg-black transition-colors duration-300">
-      <div className="max-w-4xl mx-auto">
+     <section id="skills" className="py-5  bg-white dark:bg-black transition-colors duration-300">
+      <div className="">
         <h2 className="text-2xl font-bold mb-6 text-black dark:text-white transition-colors duration-300">
           Skills
         </h2>
