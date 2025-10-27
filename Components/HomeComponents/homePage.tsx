@@ -5,6 +5,7 @@ import Nav from '../PageComponents/topNav'
 import Aboutme from '../PageComponents/Aboutme'
 import Footer from '../PageComponents/Footer'
 import { InfoCard } from '../PageComponents/infocard'
+import SkillSet from '../PageComponents/SkillSet'
 
 export const HomePage = () => {
   return (
@@ -13,6 +14,7 @@ export const HomePage = () => {
         <Nav/>
       <Aboutme/>
       <InfoCard/>
+      <SkillSet/>
       </main>
       <Footer/>
     </>
