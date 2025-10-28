@@ -8,7 +8,7 @@ export function InfoCard() {
       <h2 className=" text-2xl font-bold mb-6 ">
           About me
         </h2>
-        <p>My name is Abhinav Reddy Rajidi, and I’m a software engineer and full-stack developer from Hyderabad. I build scalable, high-performance applications and platforms with a passion for great design, speed, and reliability.</p>
+        <p>My name is Abhinav Reddy Rajid, and I’m a software engineer and full-stack developer from Hyderabad. I build scalable, high-performance applications and platforms with a passion for great design, speed, and reliability.</p>
     <p>
         Completed my Graduation in Malla-reddy collage of engineering (2021-2025)
 I specialize in the MERN stack and work extensively with modern technologies like Next.js, Clerk, google Cloud.
