@@ -6,6 +6,7 @@ import Aboutme from '../PageComponents/Aboutme'
 import Footer from '../PageComponents/Footer'
 import { InfoCard } from '../PageComponents/infocard'
 import SkillSet from '../PageComponents/SkillSet'
+import Projects from '../PageComponents/Projects'
 
 export const HomePage = () => {
   return (
@@ -15,6 +16,7 @@ export const HomePage = () => {
       <Aboutme/>
       <InfoCard/>
       <SkillSet/>
+      <Projects/>
       </main>
       <Footer/>
     </>
