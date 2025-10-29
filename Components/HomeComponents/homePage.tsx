@@ -7,6 +7,7 @@ import Footer from '../PageComponents/Footer'
 import { InfoCard } from '../PageComponents/infocard'
 import SkillSet from '../PageComponents/SkillSet'
 import Projects from '../PageComponents/Projects'
+import { Blogs } from '../PageComponents/Blogs'
 
 export const HomePage = () => {
   return (
@@ -17,6 +18,7 @@ export const HomePage = () => {
       <InfoCard/>
       <SkillSet/>
       <Projects/>
+      <Blogs/>
       </main>
       <Footer/>
     </>

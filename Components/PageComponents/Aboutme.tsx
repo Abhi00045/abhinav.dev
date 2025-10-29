@@ -9,7 +9,7 @@ function Aboutme() {
     <>
     <div className="flex flex-row items-start mt-10 mb-10 gap-4  ">
         <div>
-        <img src={pfp as unknown as string} alt="" className='w-32 h-32 mx-auto' />
+        <img src="https://i.pinimg.com/736x/c3/55/b3/c355b396e473a548fbf8d67fee33495e.jpg" alt="" className='w-32 h-32 mx-auto border rounded-2xl border-none' />
         </div>
         <div className="flex flex-col items-start">
             <h1 className="text-2xl text-center mt-2 px-0.5 font-bold">{Name}</h1>
