@@ -27,6 +27,7 @@ export default function Home() {
     <>
       <div className="min-h-screen p-3.5 bg-[url(https://cdn.wallpapersafari.com/87/23/X3lUA5.jpg)] bg-cover bg-center bg-no-repeat bg-fixed">
         <Nav />
+        <Player/>
         <main className="max-w-5xl mx-auto pb-24">
           <HomePage />
         </main>
