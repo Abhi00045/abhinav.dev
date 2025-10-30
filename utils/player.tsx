@@ -4,8 +4,14 @@ import React, { useEffect } from "react";
 import { CiPlay1 } from "react-icons/ci";
 import { IoPlaySkipBackOutline } from "react-icons/io5";
 import { IoPlaySkipForwardOutline } from "react-icons/io5";
+import { Pause } from 'lucide-react';
+import { useState } from "react";
+
 
 const Player: React.FC = () => {
+
+    const [isplay, setplay] = useState(false) 
+
   useEffect(() => {
     if (typeof window === "undefined") return;
 
@@ -199,11 +205,10 @@ const Player: React.FC = () => {
         </button>
 
         <button
-          type="button"
           className="p-3 rounded-full  text-white text-2xl"
           data-action="toggle"
-        >
-          <CiPlay1 />
+          onClick={()=>setplay(!isplay)}>
+          {isplay ? <Pause /> : <CiPlay1 />}
         </button>
 
         <button

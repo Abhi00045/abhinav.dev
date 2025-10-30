@@ -2,7 +2,9 @@
 
 "use client"
 import { Mail, Github, Linkedin, Twitter } from 'lucide-react';
-import { FaDiscord } from "react-icons/fa6";
+// import { FaDiscord } from "react-icons/fa6";
+// import { FaRegFile } from "react-icons/fa6";
+import { FileUser } from 'lucide-react';
 
 export default function Footer() {
 
@@ -32,12 +34,12 @@ export default function Footer() {
         social:"abhinavreddy891@gmail.com",
         icon:<Mail />
     },
-    // {
-    //   id:5,
-    //   name :"Discord",
-    //   social:"https://discord.com/channels/1401288323959357620/1401290023822819420",
-    //   icon:<FaDiscord />
-    // }
+    {
+      id:5,
+      name :"Resume",
+      social:"https://drive.google.com/file/d/1FzyGWhcSEqAE6zWA3CbXfs5Tdqqrs6TG/view?usp=drive_link",
+      icon:<FileUser />
+    }
 ]
 
 
