@@ -145,7 +145,7 @@ const Player: React.FC = () => {
   }, []);
 
   return (
-    <div className="fixed top-60 left-32 transform -translate-x-1/2 z-50 flex flex-col justify-around gap-0.5 p-2.5 bg-white/90 dark:bg-black/15 bg-white-900 rounded-xl bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-7 border border-gray-50 inset-0 w-50 h-100">
+    <div className="hidden sm:flex fixed top-60 left-32 transform -translate-x-1/2 z-50 flex flex-col justify-around gap-0.5 p-2.5 bg-white/90 dark:bg-black/15 bg-white-900 rounded-xl bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-7 border border-gray-50 inset-0 w-50 h-100">
       {/* Album Art */}
       <div className="aspect-square rounded-2xl overflow-hidden flex items-center justify-center shadow-[0_18px_32px_-24px_rgba(15,23,42,0.8)]">
         <img

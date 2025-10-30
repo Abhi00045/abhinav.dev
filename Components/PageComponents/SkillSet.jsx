@@ -100,7 +100,7 @@ const SkillSet = () => {
 ]
   
   return (
-     <section id="skills" className="p-5 pl-7 m-3.5 bg-white/90 dark:bg-black/15  h-full w-full bg-white-900 rounded-xl bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-7 border border-gray-50 inset-0 ">
+     <section id="skills" className="p-5 pl-7 m-3.5 bg-white/90 dark:bg-black/15  h-full w-full bg-white-900 rounded-xl bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-7 border border-gray-300 inset-0 ">
       <div className="">
         <h2 className="text-2xl font-bold mb-6 text-black dark:text-white transition-colors duration-300">
           Skills

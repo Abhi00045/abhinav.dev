@@ -40,46 +40,62 @@ function Projects() {
 
   return (
     <>
-    <div className='p-1.5 m-1.5'>
-        <h1 className='text-2xl font-bold mb-6 text-black dark:text-white transition-colors duration-300'>Projects</h1>
-        <div className='flex flex-col flex-wrap gap-4 p-1.5 h-full w-full' id='main-section'>
-            {
-                projectList.map((project,index)=>(
-                    <div key={index} className='flex flex-row justify-around gap-1.5 p-2.5 bg-white/90 dark:bg-black/15  h-full bg-white-900 rounded-xl bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-7 border border-gray-50 inset-0 w-fit'>
-                        <div id="leftImage" className=''>
-                                    <img src={project.image} alt="" className='mx-auto w-60 h-32 border border-none rounded-2xl' />
-                        </div>
-                        <div className="p-2.5 flex flex-col gap-1.5" >
-                            <div id="right-sec-upper" className='flex flex-row justify-between items-center'>
-                                <div id="upper-title">
-                                    <h1 className='font-extralight text-2xl text-blue-200'>{project.name}</h1>
-                                </div>
-                                <div id="upper-source" className='flex flex-row gap-2.5 text-xl cursor-pointer '>
-                                    {/* <button onClick={() => setPreview(!preview)}>
+    <div className="p-3 m-2">
+  <h1 className="text-3xl font-bold mb-6 text-black dark:text-white transition-colors duration-300">
+    Projects
+  </h1>
 
-                                        {preview?<FaRegEye/>:<FaRegEyeSlash/>}
-
-                                    </button>
-                                    {
-                                        preview && (
-                                            <div id="video" className=''>
-                                                
-                                            </div>
-                                        )
-                                    } */}
-                                    <a href={project.source}><SlSocialGithub /></a>
-                                <a href={project.liveLink}><IoIosLink /></a>
-                                </div>
-                            </div>
-                            <div id="right-sec-lower" className='text-base'>
-                                <p>{project.desc}</p>
-                            </div>
-                        </div>
-                    </div>
-                ))
-            }
+  <div
+    className="flex flex-col gap-6 p-2 w-full"
+    id="main-section"
+  >
+    {projectList.map((project, index) => (
+      <div
+        key={index}
+        className="flex flex-col md:flex-row items-center md:items-start justify-between gap-4 p-4 rounded-2xl bg-white/90 dark:bg-black/15 backdrop-blur-md border border-gray-200 dark:border-gray-700 transition-transform duration-300 hover:scale-[1.02]"
+      >
+        {/* Left Image Section */}
+        <div className="flex-shrink-0">
+          <img
+            src={project.image}
+            alt={project.name}
+            className="w-64 h-40 md:w-72 md:h-44 object-cover rounded-2xl shadow-md"
+          />
         </div>
-    </div>
+
+        {/* Right Section */}
+        <div className="flex flex-col gap-3 w-full md:w-2/3 text-center md:text-left">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <h2 className="font-semibold text-xl text-blue-400">{project.name}</h2>
+            <div className="flex gap-3 text-2xl mt-2 md:mt-0">
+              <a
+                href={project.source}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-blue-500 transition-colors"
+              >
+                <SlSocialGithub />
+              </a>
+              <a
+                href={project.liveLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-blue-500 transition-colors"
+              >
+                <IoIosLink />
+              </a>
+            </div>
+          </div>
+
+          <p className="text-sm md:text-base leading-relaxed text-gray-700 dark:text-gray-300">
+            {project.desc}
+          </p>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+
     </>
   )
 }

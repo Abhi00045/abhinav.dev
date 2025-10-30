@@ -13,34 +13,41 @@ export  function Blogs(){
 
     return(
     <>
-    <div className='p-1.5 m-1.5'>
-        <h1 className='text-2xl font-bold mb-6 text-black dark:text-white transition-colors duration-300'>Writings</h1>
-        <div className='flex flex-col flex-wrap gap-4 p-1.5 h-full w-full' id='main-section'>
-            {
-                blogList.map((blog,index)=>(
-                    <div key={index} className='flex flex-row justify-around gap-1.5 p-2.5 bg-white/90 dark:bg-black/15  h-full bg-white-900 rounded-xl bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-7 border border-gray-50 inset-0 w-fit'>
-                        <div id="leftImage" className=''>
-                                    <img src={blog.image} alt="" className='mx-auto w-70 h-32 border border-gray-200 dark:border-white/19 rounded-lg' />
-                        </div>
-                        <a href="" className="text-white ">
-                            <div className="p-2.5 flex flex-col gap-1.5" >
-                            <div id="right-sec-upper" className='flex flex-row justify-between items-center'>
-                                <div id="upper-title">
-                                    <h1 className='font-extralight text-2xl text-blue-200'>{blog.Title}</h1>
-                                </div>
-                                <div id="upper-source" className='flex flex-row gap-2.5 text-xl cursor-pointer '>
-                                </div>
-                            </div>
-                            <div id="right-sec-lower" className='text-base'>
-                                <p>{blog.desc}</p>
-                            </div>
-                        </div>
-                        </a>
-                    </div>
-                ))
-            }
+    <div className="p-3 m-2">
+  <h1 className="text-3xl font-bold mb-6 text-black dark:text-white transition-colors duration-300">
+    Writings
+  </h1>
+
+  <div id="main-section" className="flex flex-col gap-6 w-full">
+    {blogList.map((blog, index) => (
+      <a
+        key={index}
+        href={blog.link || "#"}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex flex-col md:flex-row items-center md:items-start justify-between gap-4 p-4 rounded-2xl bg-white/90 dark:bg-black/15 backdrop-blur-md border border-gray-200 dark:border-gray-700 transition-transform duration-300 hover:scale-[1.02] hover:border-white"
+      >
+        {/* Left Image */}
+        <div className="flex-shrink-0">
+          <img
+            src={blog.image}
+            alt={blog.Title}
+            className="w-64 h-40 md:w-72 md:h-44 object-cover rounded-2xl shadow-md"
+          />
         </div>
-    </div>
+
+        {/* Right Content */}
+        <div className="flex flex-col gap-3 w-full md:w-2/3 text-center md:text-left">
+          <h2 className="font-semibold text-xl text-blue-400">{blog.Title}</h2>
+          <p className="text-sm md:text-base leading-relaxed text-gray-700 dark:text-gray-300">
+            {blog.desc}
+          </p>
+        </div>
+      </a>
+    ))}
+  </div>
+</div>
+
     </>
     )
 }
