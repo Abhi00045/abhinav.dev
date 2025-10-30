@@ -8,7 +8,8 @@ import { InfoCard } from '../PageComponents/infocard'
 import SkillSet from '../PageComponents/SkillSet'
 import Projects from '../PageComponents/Projects'
 import { Blogs } from '../PageComponents/Blogs'
-import Player from '@/utils/player'
+import Xpirence from '../PageComponents/Xpirence'
+
 
 
 export const HomePage = () => {
@@ -18,6 +19,7 @@ export const HomePage = () => {
         {/* <Nav/> */}
       <Aboutme/>
       <InfoCard/>
+      <Xpirence/>
       <SkillSet/>
       <Projects/>
       <Blogs/>
