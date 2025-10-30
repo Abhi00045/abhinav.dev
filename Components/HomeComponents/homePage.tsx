@@ -9,11 +9,12 @@ import SkillSet from '../PageComponents/SkillSet'
 import Projects from '../PageComponents/Projects'
 import { Blogs } from '../PageComponents/Blogs'
 
+
 export const HomePage = () => {
   return (
     <>
       <main>
-        <Nav/>
+        {/* <Nav/> */}
       <Aboutme/>
       <InfoCard/>
       <SkillSet/>

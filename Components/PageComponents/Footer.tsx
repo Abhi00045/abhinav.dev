@@ -2,6 +2,7 @@
 
 "use client"
 import { Mail, Github, Linkedin, Twitter } from 'lucide-react';
+import { FaDiscord } from "react-icons/fa6";
 
 export default function Footer() {
 
@@ -30,7 +31,13 @@ export default function Footer() {
         name:"Mail",
         social:"abhinavreddy891@gmail.com",
         icon:<Mail />
-    }
+    },
+    // {
+    //   id:5,
+    //   name :"Discord",
+    //   social:"https://discord.com/channels/1401288323959357620/1401290023822819420",
+    //   icon:<FaDiscord />
+    // }
 ]
 
 
