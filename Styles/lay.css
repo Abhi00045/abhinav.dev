@@ -1,0 +1,10 @@
+#player {
+  display: block; /* Visible by default (on desktop) */
+}
+
+/* Hide on screens smaller than 1024px (tablets & mobiles) */
+@media (max-width: 1023px) {
+  #player {
+    display: none;
+  }
+}

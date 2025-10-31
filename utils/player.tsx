@@ -1,11 +1,12 @@
 "use client";
-
+import '../Styles/lay.css'
 import React, { useEffect } from "react";
 import { CiPlay1 } from "react-icons/ci";
 import { IoPlaySkipBackOutline } from "react-icons/io5";
 import { IoPlaySkipForwardOutline } from "react-icons/io5";
 import { Pause } from 'lucide-react';
 import { useState } from "react";
+// import timeless from '../Assets/timeless.mp3'
 
 
 const Player: React.FC = () => {
@@ -15,8 +16,7 @@ const Player: React.FC = () => {
   useEffect(() => {
     if (typeof window === "undefined") return;
 
-    const AUDIO_SOURCE =
-      "https://cdn.pixabay.com/audio/2025/03/18/audio_831443b0f4.mp3";
+    const AUDIO_SOURCE =`https://cdn.pixabay.com/audio/2025/03/18/audio_831443b0f4.mp3`;
 
     const visualizerBars = Array.from(
       document.querySelectorAll(".audio-bar")
@@ -145,7 +145,7 @@ const Player: React.FC = () => {
   }, []);
 
   return (
-    <div className="fixed top-60 left-32 transform -translate-x-1/2 z-50 flex flex-col justify-around gap-0.5 p-2.5 bg-white/90 dark:bg-black/15 bg-white-900 rounded-xl bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-7 border border-gray-50 inset-0 w-50 h-100">
+    <div id="player" className="fixed top-60 left-32 transform -translate-x-1/2 z-50 flex flex-col justify-around p-2.5 bg-white/90 dark:bg-black/15 bg-white-900 rounded-xl bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-7 border border-gray-50 inset-0 w-50 h-85">
       {/* Album Art */}
       <div className="aspect-square rounded-2xl overflow-hidden flex items-center justify-center shadow-[0_18px_32px_-24px_rgba(15,23,42,0.8)]">
         <img
@@ -157,7 +157,7 @@ const Player: React.FC = () => {
       </div>
 
       {/* Info + Visualizer */}
-      <section className="flex flex-col w-full gap-2">
+      <section className="flex flex-col w-full gap-1">
         <div className="flex items-center justify-between w-full gap-4">
           <div className="min-w-0 flex-1">
             <h3 className="text-sm font-semibold truncate">Timeless</h3>
@@ -166,7 +166,7 @@ const Player: React.FC = () => {
             </p>
           </div>
 
-          <div className="flex items-end gap-[2px] h-11">
+          <div className="flex items-end gap-[2px] h-6">
             {Array.from({ length: 9 }).map((_, i) => (
               <span
                 key={i}
@@ -177,7 +177,7 @@ const Player: React.FC = () => {
         </div>
 
         {/* Progress Bar */}
-        <div className="flex flex-col gap-2 w-full mt-2">
+        <div className="flex flex-col gap-1 w-full mt-2">
           <div
             className="relative w-full h-[6px] rounded-full bg-white/20 overflow-hidden cursor-pointer"
             data-progress-track
@@ -195,7 +195,7 @@ const Player: React.FC = () => {
       </section>
 
       {/* Controls */}
-      <div className="flex items-center justify-center gap-4 mt-3 w-full">
+      <div className="flex items-center justify-center gap-2 mt-3 w-full">
         <button
           type="button"
           className="p-2 hover:text-white"

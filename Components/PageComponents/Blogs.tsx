@@ -7,7 +7,7 @@ export  function Blogs(){
             Title:"Part 1: Docker with Node.js & Express.js - The Complete Beginner's Guide",
             desc:"A beginner-friendly guide demonstrating how to containerize a Node.js and Express.js application using Docker. Showcases image creation, container management, and workflow automation for consistent app deployment.",
             image:"https://i.pinimg.com/736x/5b/46/6b/5b466b71e1cc4b9cf6ff3361c0e976c3.jpg",
-            link:"https://github.com/Abhi00045/Docker-With-Node.js-and-Express.js.git"
+            link:"https://medium.com/@rajidiabhinavreddy/docker-with-node-js-express-js-a-complete-beginners-guide-part-1-d5cd0ae90b7f"
         },
     ]
 

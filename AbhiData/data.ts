@@ -28,7 +28,7 @@ const SocialLinks = [
     {
         id:1,
         name:"Linkdin",
-        social:"linkdin.com",
+        social:"https://www.linkedin.com/in/abhinavreddyrajidi-988633280/",
     },
     {
         id:2,
