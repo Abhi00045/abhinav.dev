@@ -19,7 +19,7 @@ export default function Footer() {
     {
         id:2,
         name:"Linkdin",
-        social:"linkdin.com",
+        social:"https://www.linkedin.com/in/abhinavreddyrajidi-988633280/",
         icon: <Linkedin />
     },
     {
