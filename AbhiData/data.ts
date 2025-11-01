@@ -11,7 +11,7 @@ const About = `
 
 <p>My name is Abhinav Reddy Rajidi, a software engineer and full-stack developer from Hyderabad. I build scalable, high-performance applications and platforms with a passion for great design, speed, and reliability.</p>
 
-<p>Completed my Graduation in Malla-reddy collage of engineering (2021-2025)
+<p>Completed my Graduation in Malla-reddy college of engineering (2021-2025)
 I specialize in the MERN stack and work extensively with modern technologies like Next.js, Clerk, google Cloud.</p>
 
 <p>I deeply motivated to get into Tech and constantly challenge myself with complex projects. My goal is to build Responsive Applications that are both functional and beautifully designed</p>
