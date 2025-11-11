@@ -149,10 +149,10 @@ const Player: React.FC = () => {
       {/* Album Art */}
       <div className="aspect-square rounded-2xl overflow-hidden flex items-center justify-center shadow-[0_18px_32px_-24px_rgba(15,23,42,0.8)]">
         <img
-          src="https://i.scdn.co/image/ab67616d0000b273982320da137d0de34410df61"
-          alt="Timeless cover art"
+          src="https://cdn.gulte.com/wp-content/uploads/2025/11/globe-trotter-first-song.jpg"
+          alt="Globe Trotter art"
           draggable={false}
-          className="w-full h-full object-cover rounded-2xl saturate-105 pointer-events-none"
+          className="w-full h-full object-cover rounded-2xl saturate-105 pointer-events-none m-2"
         />
       </div>
 
@@ -160,9 +160,9 @@ const Player: React.FC = () => {
       <section className="flex flex-col w-full gap-1">
         <div className="flex items-center justify-between w-full gap-4">
           <div className="min-w-0 flex-1">
-            <h3 className="text-sm font-semibold truncate">Timeless</h3>
+            <h3 className="text-sm font-semibold truncate">Globe Trotter</h3>
             <p className="text-xs text-gray-400 truncate">
-              Playboi Carti x The Weeknd Type Beat
+              SSMB29 x GlobeTrotter
             </p>
           </div>
 
