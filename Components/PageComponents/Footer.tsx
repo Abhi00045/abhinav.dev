@@ -29,11 +29,12 @@ export default function Footer() {
         icon:<Github/>
     },
     {
-        id:4,
-        name:"Mail",
-        social:"abhinavreddy891@gmail.com",
-        icon:<Mail />
-    },
+  id:4,
+  name: "Mail",
+  social: "mailto:contact@abhinavrajidi.tech?subject=Contact%20from%20Portfolio&body=Hi%20Abhinav,%0A%0AI%20came%20across%20your%20portfolio...",
+  icon: <Mail />
+}
+,
     {
       id:5,
       name :"Resume",
