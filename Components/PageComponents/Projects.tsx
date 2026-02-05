@@ -27,15 +27,15 @@ function Projects() {
             desc:"A modern blogging web app developed with React, Node.js, Express, and MongoDB, providing a smooth writing and reading experience with an intuitive interface and real-time updates.",
             source:"",
             liveLink :" "
-        }
-        // {
-        //     id:3,
-        //     image:"m/,,",
-        //     name:"BlogBox",
-        //     desc:"",
-        //     source:"",
-        //     liveLink :" "
-        // },
+        },
+        {
+            id:3,
+            image:"https://i.pinimg.com/736x/f6/7f/00/f67f00b4e4419e56e2d46d0f4d5d00ac.jpg",
+            name:"AfterHours[Personal Journal Book]",
+            desc:"AfterHours is a full-stack personal journal platform built with Next.js and Supabase that enables users to securely log daily entries, manage past reflections, and maintain a private digital diary experience with real-time cloud sync and OAuth authentication.",
+            source:"https://github.com/Abhi00045/Afterhours.git",
+            liveLink :"https://afterhours-loukkdf8v-abhi00045s-projects.vercel.app/"
+        },
     ]
 
   return (
