@@ -1,6 +1,8 @@
 
 const image = "/Assets/pfp.jpg"
 
+const NameShort = "Abhi"
+
 const Name = "Abhinav Reddy Rajidi"
 
 const selfRole = "Software Developer"
@@ -43,4 +45,4 @@ const SocialLinks = [
 ]
 
 
-export {image,Name,selfRole,shortBio,About,SocialLinks}
+export {image,Name,selfRole,shortBio,About,SocialLinks,NameShort}
