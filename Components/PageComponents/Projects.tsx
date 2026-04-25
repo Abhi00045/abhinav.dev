@@ -15,13 +15,21 @@ function Projects() {
         {
             id:1,
             image:"https://i.pinimg.com/736x/f8/61/77/f86177a67b8ac37791b04bc1119017bc.jpg",
-            name:"applAI",
+            name:"ApplAI",
             desc:"An AI-powered job portal built with the MERN stack, featuring a mock interview module and a voice assistant to assist applicants in honing their responses and submitting smarter applications.",
             source:"",
             liveLink :" "
         },
         {
             id:2,
+            image:"https://i.pinimg.com/1200x/8d/fa/55/8dfa55bc10207a0dfc9a0208e5a91fe2.jpg",
+            name:"MLP-DRIVEN MALARIA DISEASE OUTBREAK ANALYSIS",
+            desc:"Malaria is a life-threatening disease caused by parasites transmitted to humans through the bites of infected female Anopheles mosquitoes.",
+            source:"",
+            liveLink :" "
+        },
+        {
+            id:3,
             image:"https://i.pinimg.com/736x/a9/4d/62/a94d6233d089245688dae8f76d83f735.jpg",
             name:"BlogBox",
             desc:"A modern blogging web app developed with React, Node.js, Express, and MongoDB, providing a smooth writing and reading experience with an intuitive interface and real-time updates.",
@@ -29,7 +37,7 @@ function Projects() {
             liveLink :" "
         },
         {
-            id:3,
+            id:4,
             image:"https://i.pinimg.com/736x/f6/7f/00/f67f00b4e4419e56e2d46d0f4d5d00ac.jpg",
             name:"AfterHours[Personal Journal Book]",
             desc:"AfterHours is a full-stack personal journal platform built with Next.js and Supabase that enables users to securely log daily entries, manage past reflections, and maintain a private digital diary experience with real-time cloud sync and OAuth authentication.",
