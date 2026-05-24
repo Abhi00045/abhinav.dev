@@ -37,7 +37,7 @@
 
 import { Name, NameShort, selfRole, shortBio } from '@/AbhiData/data'
 import Image from 'next/image'
-import pfp from '@/assets/pfp.jpg'
+import pfp from '../../Assets/pfp.jpg'
 
 const highlights = [
   "FULL-STACK DEVELOPER & OPEN-SOURCE BUILDER",

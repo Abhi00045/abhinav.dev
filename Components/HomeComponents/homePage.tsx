@@ -285,12 +285,12 @@ function FloatingWindow({
             b.style.borderTopColor = '#fff8f0'; b.style.borderLeftColor = '#fff8f0'
             b.style.borderRightColor = '#7a6a50'; b.style.borderBottomColor = '#7a6a50'
           }}
-          onMouseDown={e => {
-            e.stopPropagation()
-            const b = e.currentTarget
-            b.style.borderTopColor = '#7a6a50'; b.style.borderLeftColor = '#7a6a50'
-            b.style.borderRightColor = '#fff8f0'; b.style.borderBottomColor = '#fff8f0'
-          }}
+          // onMouseDown={e => {
+          //   e.stopPropagation()
+          //   const b = e.currentTarget
+          //   b.style.borderTopColor = '#7a6a50'; b.style.borderLeftColor = '#7a6a50'
+          //   b.style.borderRightColor = '#fff8f0'; b.style.borderBottomColor = '#fff8f0'
+          // }}
           onMouseUp={e => {
             const b = e.currentTarget
             b.style.borderTopColor = '#fff8f0'; b.style.borderLeftColor = '#fff8f0'
