@@ -186,12 +186,12 @@ export default function Xperience() {
     // <div style={{ display: 'flex', justifyContent: 'center', padding: '32px 16px', background: '#f5c6c6', fontFamily: mono }}>
       <div style={{ width: 580, background: '#f5f5dc', border: '1.5px solid #555', boxShadow: '4px 4px 0 #aaa', display: 'flex', flexDirection: 'column' }}>
 
-        {/* Titlebar */}
+        {/* Titlebar
         <div style={{ background: '#e8e4d8', borderBottom: '1px solid #aaa', padding: '3px 8px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexShrink: 0 }}>
           <div style={{ width: 14, height: 14, border: '1px solid #888', background: '#d4d0c0', fontSize: 8, display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}>✕</div>
           <span style={{ fontSize: 11, letterSpacing: 1, color: '#333', fontWeight: 700 }}>EXPERIENCE</span>
           <div style={{ width: 14 }} />
-        </div>
+        </div> */}
 
         {/* Body */}
         <div style={{ display: 'flex', flexDirection: 'row', height: 420 }}>

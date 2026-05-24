@@ -125,9 +125,8 @@
 // }
 
 // export default SkillSet
-
-'use client'
-import React, { useState, useEffect } from 'react'
+ 'use client'
+import React, { useState } from 'react'
 import { IoLogoReact } from 'react-icons/io5'
 import { RiNextjsLine, RiJavascriptLine, RiTailwindCssFill } from 'react-icons/ri'
 import { TbBrandDjango, TbBrandTypescript, TbBrandFramerMotion } from 'react-icons/tb'
@@ -138,158 +137,202 @@ import { GrGithub } from 'react-icons/gr'
 import { AiOutlinePython } from 'react-icons/ai'
 import { FaJava, FaFigma } from 'react-icons/fa6'
 
-const Skills = [
-  { id: 1,  text: 'ReactJS',     icon: <IoLogoReact /> },
-  { id: 2,  text: 'NextJS',      icon: <RiNextjsLine /> },
-  { id: 3,  text: 'Django',      icon: <TbBrandDjango /> },
-  { id: 4,  text: 'JavaScript',  icon: <RiJavascriptLine /> },
-  { id: 5,  text: 'TypeScript',  icon: <TbBrandTypescript /> },
-  { id: 6,  text: 'Tailwind',    icon: <RiTailwindCssFill /> },
-  { id: 7,  text: 'shadcn',      icon: <SiShadcnui /> },
-  { id: 8,  text: 'Motion',      icon: <TbBrandFramerMotion /> },
-  { id: 9,  text: 'GSAP',        icon: <SiGreensock /> },
-  { id: 10, text: 'NodeJS',      icon: <IoLogoNodejs /> },
-  { id: 11, text: 'ExpressJS',   icon: <SiExpress /> },
-  { id: 12, text: 'MongoDB',     icon: <DiMongodb /> },
-  { id: 13, text: 'Postman',     icon: <SiPostman /> },
-  { id: 14, text: 'GitHub',      icon: <GrGithub /> },
-  { id: 15, text: 'Python',      icon: <AiOutlinePython /> },
-  { id: 16, text: 'Java',        icon: <FaJava /> },
-  { id: 17, text: 'Docker',      icon: <DiDocker /> },
-  { id: 18, text: 'Figma',       icon: <FaFigma /> },
-]
-
 const mono = "'Courier New', Courier, monospace"
+
+const categories = [
+  {
+    label: 'Frontend',
+    color: '#c8d8f0',
+    accent: '#4a6a9a',
+    skills: [
+      { id: 1,  text: 'ReactJS',    icon: <IoLogoReact /> },
+      { id: 2,  text: 'NextJS',     icon: <RiNextjsLine /> },
+      { id: 4,  text: 'JavaScript', icon: <RiJavascriptLine /> },
+      { id: 5,  text: 'TypeScript', icon: <TbBrandTypescript /> },
+      { id: 6,  text: 'Tailwind',   icon: <RiTailwindCssFill /> },
+      { id: 7,  text: 'shadcn',     icon: <SiShadcnui /> },
+      { id: 8,  text: 'Motion',     icon: <TbBrandFramerMotion /> },
+      { id: 9,  text: 'GSAP',       icon: <SiGreensock /> },
+    ],
+  },
+  {
+    label: 'Backend',
+    color: '#d0f0d8',
+    accent: '#2a6a3a',
+    skills: [
+      { id: 10, text: 'NodeJS',    icon: <IoLogoNodejs /> },
+      { id: 11, text: 'ExpressJS', icon: <SiExpress /> },
+      { id: 3,  text: 'Django',    icon: <TbBrandDjango /> },
+      { id: 12, text: 'MongoDB',   icon: <DiMongodb /> },
+    ],
+  },
+  {
+    label: 'Tools & Others',
+    color: '#f0e8c8',
+    accent: '#7a5a00',
+    skills: [
+      { id: 13, text: 'Postman', icon: <SiPostman /> },
+      { id: 14, text: 'GitHub',  icon: <GrGithub /> },
+      { id: 15, text: 'Python',  icon: <AiOutlinePython /> },
+      { id: 16, text: 'Java',    icon: <FaJava /> },
+      { id: 17, text: 'Docker',  icon: <DiDocker /> },
+      { id: 18, text: 'Figma',   icon: <FaFigma /> },
+    ],
+  },
+]
 
 export default function SkillSet() {
   const [visible, setVisible] = useState(true)
-  const [activeTab, setActiveTab] = useState<'general' | 'skills'>('general')
-  const [volume, setVolume] = useState(60)
-  const [displayMode, setDisplayMode] = useState<'normal' | 'invert'>('normal')
-  const [selectedSkills, setSelectedSkills] = useState<number[]>([])
-  const [time, setTime] = useState(new Date())
-
-  useEffect(() => {
-    const t = setInterval(() => setTime(new Date()), 1000)
-    return () => clearInterval(t)
-  }, [])
-
-  const toggleSkill = (id: number) =>
-    setSelectedSkills(prev => prev.includes(id) ? prev.filter(x => x !== id) : [...prev, id])
-
-  const fmt = (n: number) => String(n).padStart(2, '0')
-  const dateStr = `${fmt(time.getDate())}/${fmt(time.getMonth() + 1)}/${String(time.getFullYear()).slice(2)}`
-  const timeStr = time.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', second: '2-digit' })
 
   if (!visible) return null
 
-  const s = {
-    tab: (active: boolean): React.CSSProperties => ({
-      flex: 1, padding: '8px 0', textAlign: 'center', fontSize: 12, fontWeight: 700,
-      letterSpacing: 1, cursor: 'pointer', border: '1px solid #aaa', fontFamily: mono,
-      background: active ? '#f5f5dc' : '#e0ddc8', color: active ? '#111' : '#555',
-      borderBottom: active ? '1px solid #f5f5dc' : '1px solid #aaa',
-      marginBottom: active ? -1 : 0, zIndex: active ? 1 : 0, position: 'relative',
-    }),
-    box: { border: '1.5px solid #888', padding: '10px 12px', background: '#fff8e8' } as React.CSSProperties,
-    boxTitle: { fontSize: 10, color: '#666', marginTop: 8, fontFamily: mono } as React.CSSProperties,
-    modeBtn: (on: boolean): React.CSSProperties => ({
-      flex: 1, padding: '8px 0', border: '1.5px solid #888', fontSize: 13, fontWeight: 700,
-      cursor: 'pointer', fontFamily: mono, textAlign: 'center',
-      background: on ? '#111' : '#f5f5dc', color: on ? '#f5f5dc' : '#111',
-    }),
-    skillBtn: (selected: boolean): React.CSSProperties => ({
-      border: '1.5px solid #888', padding: '5px 10px',
-      background: selected ? '#111' : '#fff8e8',
-      color: selected ? '#f5f5dc' : '#111',
-      fontSize: 11, fontFamily: mono, cursor: 'pointer',
-      display: 'flex', alignItems: 'center', gap: 6,
-    }),
-  }
-
   return (
-    // <div style={{ display: 'flex', justifyContent: 'center', padding: '32px 16px', background: '#f5c6c6', fontFamily: mono }}>
-      <div style={{ width: 580, background: '#f5f5dc', border: '1.5px solid #555', boxShadow: '4px 4px 0 #aaa', display: 'flex', flexDirection: 'column' }}>
+    <>
+      <style>{`
+        .skill-chip {
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          padding: 5px 10px;
+          border: 1.5px solid #aaa;
+          background: #fff8e8;
+          font-family: ${mono};
+          font-size: 11px;
+          color: #222;
+          cursor: default;
+          transition: background 0.12s, transform 0.1s;
+          white-space: nowrap;
+        }
+        .skill-chip:hover {
+          background: #ede0c8;
+          transform: translateY(-1px);
+          border-color: #888;
+        }
+        .skill-chip .chip-icon {
+          font-size: 16px;
+          display: flex;
+          align-items: center;
+          flex-shrink: 0;
+        }
+        .skillset-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          gap: 0;
+        }
+        @media (max-width: 600px) {
+          .skillset-grid {
+            grid-template-columns: 1fr;
+          }
+        }
+      `}</style>
 
-        {/* Titlebar */}
-        <div style={{ background: '#f0ede0', borderBottom: '1px solid #aaa', padding: '5px 10px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexShrink: 0 }}>
-          <div style={{ width: 14, height: 14, border: '1px solid #888', background: '#e8e4d8', fontSize: 9, display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
-            onClick={() => setVisible(false)}>✕</div>
-          <span style={{ fontFamily: 'Georgia, serif', fontWeight: 900, fontSize: 16, letterSpacing: 2, color: '#111' }}>SETTINGS</span>
+      <div style={{
+        background: '#f5f5dc',
+        border: '1.5px solid #555',
+        boxShadow: '4px 4px 0 #aaa',
+        fontFamily: mono,
+        width: '100%',
+      }}>
+
+        {/* Title bar with close button
+        <div style={{
+          background: '#f0ede0',
+          borderBottom: '1px solid #aaa',
+          padding: '6px 12px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+        }}>
+          <span style={{
+            fontFamily: 'Georgia, serif',
+            fontWeight: 900,
+            fontSize: 15,
+            letterSpacing: 3,
+            color: '#111',
+            textTransform: 'uppercase',
+          }}>
+            ⚡ Skill Set
+          </span>
+          <button
+            onClick={() => setVisible(false)}
+            style={{
+              width: 18, height: 16,
+              background: '#e8a0a0',
+              border: '1px solid #7a0000',
+              fontSize: 9,
+              cursor: 'pointer',
+              fontFamily: mono,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              color: '#5a0000',
+              fontWeight: 700,
+            }}
+          >✕</button>
+        </div> */}
+
+        {/* Category grid */}
+        <div className="skillset-grid">
+          {categories.map((cat, ci) => (
+            <div
+              key={cat.label}
+              style={{
+                borderRight: ci < categories.length - 1 ? '1px solid #ccc' : 'none',
+                padding: '14px 12px',
+              }}
+            >
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: 7,
+                marginBottom: 12,
+                paddingBottom: 7,
+                borderBottom: `2px solid ${cat.accent}`,
+              }}>
+                <div style={{
+                  width: 10, height: 10,
+                  background: cat.accent,
+                  border: '1px solid #555',
+                  flexShrink: 0,
+                }} />
+                <span style={{
+                  fontSize: 11,
+                  fontWeight: 700,
+                  letterSpacing: 1.5,
+                  color: cat.accent,
+                  textTransform: 'uppercase',
+                }}>
+                  {cat.label}
+                </span>
+              </div>
+
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
+                {cat.skills.map(skill => (
+                  <div key={skill.id} className="skill-chip">
+                    <span className="chip-icon">{skill.icon}</span>
+                    <span>{skill.text}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
 
-        {/* Tabs */}
-        {/* <div style={{ display: 'flex', borderBottom: '1px solid #aaa' }}>
-          <div style={s.tab(activeTab === 'general')} onClick={() => setActiveTab('general')}>GENERAL</div>
-          <div style={s.tab(activeTab === 'skills')} onClick={() => setActiveTab('skills')}>SKILLS</div>
-        </div> */}
-
-        {/* General Tab
-        {activeTab === 'general' && (
-          <div style={{ padding: '18px 16px 24px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
-            <div style={s.box}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                <span>🔊</span>
-                <input type="range" min={0} max={100} value={volume}
-                  onChange={e => setVolume(Number(e.target.value))}
-                  style={{ flex: 1, height: 14, cursor: 'pointer' }} />
-                <span style={{ fontSize: 10, minWidth: 24, color: '#555', fontFamily: mono }}>{volume}</span>
-              </div>
-              <div style={s.boxTitle}>Speaker Volume</div>
-            </div>
-
-            <div style={s.box}>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                  <span>📅</span>
-                  <span style={{ fontSize: 12, fontWeight: 700, fontFamily: mono }}>{dateStr}</span>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                  <span>🕐</span>
-                  <span style={{ fontSize: 12, fontWeight: 700, fontFamily: mono }}>{timeStr}</span>
-                </div>
-              </div>
-              <div style={s.boxTitle}>Date &amp; Time</div>
-            </div>
-
-            <div style={s.box}>
-              <div style={{ display: 'flex', gap: 0 }}>
-                <button style={s.modeBtn(displayMode === 'normal')} onClick={() => setDisplayMode('normal')}>Normal</button>
-                <button style={s.modeBtn(displayMode === 'invert')} onClick={() => setDisplayMode('invert')}>Invert</button>
-              </div>
-              <div style={s.boxTitle}>Display Mode</div>
-            </div>
-
-            <div style={s.box}>
-              <div style={{ fontSize: 11, color: '#555', lineHeight: 1.7, fontFamily: mono }}>
-                <div>👤 abhinav.rajid</div>
-                <div>🌍 Hyderabad, IN</div>
-                <div>🎓 MRCE 2025</div>
-              </div>
-              <div style={s.boxTitle}>User Info</div>
-            </div>
-          </div>
-        )} */}
-
-        {/* Skills Tab */}
-        {activeTab === 'skills' && (
-          <div style={{ padding: '18px 16px 24px', display: 'flex', flexWrap: 'wrap', gap: 8 }}>
-            {Skills.map(skill => (
-              <button key={skill.id} style={s.skillBtn(selectedSkills.includes(skill.id))}
-                onClick={() => toggleSkill(skill.id)}>
-                <span style={{ fontSize: 16, display: 'flex', alignItems: 'center' }}>{skill.icon}</span>
-                <span>{skill.text}</span>
-              </button>
-            ))}
-          </div>
-        )}
-
-        {/* Footer */}
-        {/* <div style={{ borderTop: '1px solid #aaa', padding: '12px 16px', textAlign: 'right', fontSize: 11, color: '#666', background: '#f0ede0', fontFamily: mono, lineHeight: 1.7 }}>
-          Abhinav Reddy Rajid — Portfolio OS Version 1.0<br />
-          Full Stack Developer · Hyderabad · MRCE 2025
-        </div> */}
+        {/* Footer bar */}
+        <div style={{
+          borderTop: '1px solid #ccc',
+          padding: '5px 12px',
+          fontSize: 10,
+          color: '#888',
+          fontFamily: mono,
+          background: '#f0ede0',
+          display: 'flex',
+          justifyContent: 'space-between',
+        }}>
+          <span>{categories.reduce((a, c) => a + c.skills.length, 0)} skills</span>
+          <span>☼ STACK</span>
+        </div>
       </div>
-    // </div>
+    </>
   )
 }

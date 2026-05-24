@@ -51,27 +51,29 @@
 //     </>
 //     )
 // }
-
 'use client'
-import React, { useRef, useEffect, useCallback, useState } from 'react'
-
-export const projectList = [
-  {
-            id: 4,
-            name:"Part 1: Docker with Node.js & Express.js - The Complete Beginner's Guide",
-            desc:"A beginner-friendly guide demonstrating how to containerize a Node.js and Express.js application using Docker. Showcases image creation, container management, and workflow automation for consistent app deployment.",
-            image:"https://i.pinimg.com/736x/5b/46/6b/5b466b71e1cc4b9cf6ff3361c0e976c3.jpg",
-            source:"https://medium.com/@rajidiabhinavreddy/docker-with-node-js-express-js-a-complete-beginners-guide-part-1-d5cd0ae90b7f"
-        },
-//         id: 4,
-//     image: 'https://i.pinimg.com/736x/f6/7f/00/f67f00b4e4419e56e2d46d0f4d5d00ac.jpg',
-//     name: 'AfterHours — Personal Journal Book',
-//     desc: 'A full-stack personal journal platform built with Next.js and Supabase. Enables users to securely log daily entries, manage past reflections, and maintain a private digital diary with real-time cloud sync and OAuth authentication.',
-//     source: 'https://github.com/Abhi00045/Afterhours.git',
-//     liveLink: 'https://afterhours-loukkdf8v-abhi00045s-projects.vercel.app/',
-]
+import React, { useState, useRef, useCallback } from 'react'
 
 const mono = "'Courier New', Courier, monospace"
+
+const blogList = [
+  {
+    id: 1,
+    name: "Part 1: Docker with Node.js & Express.js - The Complete Beginner's Guide",
+    desc: "A beginner-friendly guide demonstrating how to containerize a Node.js and Express.js application using Docker. Showcases image creation, container management, and workflow automation for consistent app deployment.",
+    image: "https://i.pinimg.com/736x/5b/46/6b/5b466b71e1cc4b9cf6ff3361c0e976c3.jpg",
+    source: "https://medium.com/@rajidiabhinavreddy/docker-with-node-js-express-js-a-complete-beginners-guide-part-1-d5cd0ae90b7f",
+    date: "12 May 2025",
+  },
+  {
+    id: 2,
+    name: "Part 2: Docker Volumes, Networks & Multi-Container Apps",
+    desc: "Deep dive into Docker Volumes for persistent storage, custom networks for container communication, and orchestrating multi-container setups with Docker Compose for real-world applications.",
+    image: "https://i.pinimg.com/736x/5b/46/6b/5b466b71e1cc4b9cf6ff3361c0e976c3.jpg",
+    source: "https://medium.com/@rajidiabhinavreddy",
+    date: "3 Jun 2025",
+  },
+]
 
 export default function Blogs() {
   const [visible, setVisible] = useState(true)
@@ -97,48 +99,30 @@ export default function Blogs() {
     thumb.style.top = Math.floor(sr * (trackH - thumbH)) + 'px'
   }, [])
 
-  useEffect(() => {
-    setTimeout(updateThumb, 150)
-    window.addEventListener('resize', updateThumb)
-    return () => window.removeEventListener('resize', updateThumb)
-  }, [updateThumb])
-
-  useEffect(() => {
-    const onMouseMove = (e: MouseEvent) => {
-      if (!dragging.current) return
-      const area = scrollAreaRef.current
-      const thumb = thumbRef.current
-      const track = trackRef.current
-      if (!area || !thumb || !track) return
-      const trackH = track.getBoundingClientRect().height
-      const thumbH = thumb.offsetHeight
-      const dy = e.clientY - dragStartY.current
-      const sr = area.scrollHeight - area.clientHeight
-      area.scrollTop = Math.max(0, Math.min(sr, dragStartScrollTop.current + (dy / (trackH - thumbH)) * sr))
-    }
-    const onMouseUp = () => {
-      dragging.current = false
-      if (scrollTimer.current) clearInterval(scrollTimer.current)
-    }
-    document.addEventListener('mousemove', onMouseMove)
-    document.addEventListener('mouseup', onMouseUp)
-    return () => {
-      document.removeEventListener('mousemove', onMouseMove)
-      document.removeEventListener('mouseup', onMouseUp)
-    }
-  }, [])
-
-  const startScroll = (dir: number) => {
-    scrollAreaRef.current?.scrollBy({ top: dir * 22 })
-    scrollTimer.current = setInterval(() => scrollAreaRef.current?.scrollBy({ top: dir * 22 }), 80)
-  }
-  const stopScroll = () => { if (scrollTimer.current) clearInterval(scrollTimer.current) }
-
   const handleThumbMouseDown = (e: React.MouseEvent) => {
     dragging.current = true
     dragStartY.current = e.clientY
     dragStartScrollTop.current = scrollAreaRef.current?.scrollTop ?? 0
     e.preventDefault()
+    const onMouseMove = (ev: MouseEvent) => {
+      if (!dragging.current) return
+      const track = trackRef.current
+      const area = scrollAreaRef.current
+      const thumb = thumbRef.current
+      if (!track || !area || !thumb) return
+      const trackH = track.getBoundingClientRect().height
+      const thumbH = thumb.offsetHeight
+      const dy = ev.clientY - dragStartY.current
+      const sr = area.scrollHeight - area.clientHeight
+      area.scrollTop = Math.max(0, Math.min(sr, dragStartScrollTop.current + (dy / (trackH - thumbH)) * sr))
+    }
+    const onMouseUp = () => {
+      dragging.current = false
+      window.removeEventListener('mousemove', onMouseMove)
+      window.removeEventListener('mouseup', onMouseUp)
+    }
+    window.addEventListener('mousemove', onMouseMove)
+    window.addEventListener('mouseup', onMouseUp)
   }
 
   const handleTrackClick = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -150,93 +134,228 @@ export default function Blogs() {
     area.scrollTop = ((e.clientY - rect.top) / rect.height) * (area.scrollHeight - area.clientHeight)
   }
 
+  const startScroll = (dir: number) => {
+    scrollAreaRef.current?.scrollBy({ top: dir * 22 })
+    scrollTimer.current = setInterval(() => scrollAreaRef.current?.scrollBy({ top: dir * 22 }), 80)
+  }
+  const stopScroll = () => { if (scrollTimer.current) clearInterval(scrollTimer.current) }
+
   if (!visible) return null
 
-  const s = {
-    btn: {
-      padding: '3px 8px', border: '1px solid #888', background: '#e8e4d8',
-      fontSize: 11, cursor: 'pointer', fontFamily: mono, display: 'flex', alignItems: 'center', gap: 5,
-    } as React.CSSProperties,
-    sbBtn: {
-      width: 16, height: 16, background: '#c4c0b0', border: '1px solid #888',
-      fontSize: 9, display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer',
-    } as React.CSSProperties,
+  const sbBtn: React.CSSProperties = {
+    width: 16, height: 16, background: '#c4c0b0', border: '1px solid #888',
+    fontSize: 9, display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer',
+    flexShrink: 0,
   }
 
   return (
-    // <div style={{ display: 'flex', justifyContent: 'center', padding: '32px 16px', background: '#f5c6c6', fontFamily: mono }}>
-      <div style={{ width: 580, background: '#f5f5dc', border: '1.5px solid #555', boxShadow: '4px 4px 0 #aaa', display: 'flex', flexDirection: 'column' }}>
+    <>
+      <style>{`
+        .blog-row {
+          display: flex;
+          flex-direction: row;
+          gap: 0;
+          padding: 12px;
+          border-bottom: 1px solid #ddd;
+          align-items: flex-start;
+          text-decoration: none;
+          color: inherit;
+          transition: background 0.12s;
+        }
+        .blog-row:hover {
+          background: #ede8d8;
+        }
+        .blog-row:last-child {
+          border-bottom: none;
+        }
+        .blog-img {
+          width: 150px;
+          height: 100px;
+          object-fit: cover;
+          flex-shrink: 0;
+          border: 1px solid #bbb;
+        }
+        .blog-content {
+          flex: 1;
+          padding-left: 14px;
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+          min-width: 0;
+        }
+        .blog-title {
+          font-family: ${mono};
+          font-size: 13px;
+          font-weight: 700;
+          color: #111;
+          line-height: 1.4;
+        }
+        .blog-desc {
+          font-family: ${mono};
+          font-size: 11px;
+          color: #555;
+          line-height: 1.55;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+        .blog-date {
+          font-family: ${mono};
+          font-size: 10px;
+          color: #999;
+        }
+        .blog-read-btn {
+          display: inline-flex;
+          align-items: center;
+          gap: 5px;
+          margin-top: 4px;
+          padding: 3px 10px;
+          font-family: ${mono};
+          font-size: 11px;
+          color: #555;
+          background: #e8e4d8;
+          border: 1px solid #888;
+          cursor: pointer;
+          text-decoration: none;
+          width: fit-content;
+          transition: background 0.1s;
+        }
+        .blog-read-btn:hover {
+          background: #d8d0c0;
+          color: #222;
+        }
+        @media (max-width: 500px) {
+          .blog-row {
+            flex-direction: column;
+          }
+          .blog-img {
+            width: 100%;
+            height: 140px;
+          }
+          .blog-content {
+            padding-left: 0;
+            padding-top: 10px;
+          }
+        }
+      `}</style>
 
-        {/* Titlebar */}
-        <div style={{ background: '#f0ede0', borderBottom: '1px solid #aaa', padding: '5px 10px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexShrink: 0 }}>
-          <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
-            <button style={s.btn} onClick={() => setVisible(false)}>✕</button>
-            {/* <button style={s.btn}>🔔 Get the newsletter</button> */}
-          </div>
-          <span style={{ fontFamily: 'Georgia, serif', fontWeight: 900, fontSize: 16, letterSpacing: 2, color: '#111' }}>Writings</span>
-        </div>
+      <div style={{
+        width: '100%',
+        background: '#f5f5dc',
+        border: '1.5px solid #555',
+        boxShadow: '4px 4px 0 #aaa',
+        display: 'flex',
+        flexDirection: 'column',
+        fontFamily: mono,
+      }}>
 
-        {/* Body */}
-        <div style={{ display: 'flex', flexDirection: 'row', height: 460 }}>
+        {/* Titlebar
+        <div style={{
+          background: '#f0ede0',
+          borderBottom: '1px solid #aaa',
+          padding: '5px 10px',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          flexShrink: 0,
+        }}>
+          <span style={{
+            fontFamily: 'Georgia, serif',
+            fontWeight: 900,
+            fontSize: 15,
+            letterSpacing: 2,
+            color: '#111',
+            textTransform: 'uppercase',
+          }}>
+            ✍ Writings
+          </span>
+          <button
+            onClick={() => setVisible(false)}
+            style={{
+              width: 18, height: 16,
+              background: '#e8a0a0',
+              border: '1px solid #7a0000',
+              fontSize: 9,
+              cursor: 'pointer',
+              fontFamily: mono,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              color: '#5a0000',
+              fontWeight: 700,
+            }}
+          >✕</button>
+        </div> */}
 
+        {/* Body with custom scrollbar */}
+        <div style={{ display: 'flex', flexDirection: 'row', maxHeight: 420 }}>
+
+          {/* Scroll area */}
           <div
             ref={scrollAreaRef}
             onScroll={updateThumb}
             style={{ flex: 1, overflowY: 'scroll', scrollbarWidth: 'none' } as React.CSSProperties}
           >
-            {projectList.map((project, i) => (
-              <div key={project.id} style={{
-                display: 'flex', flexDirection: 'row', gap: 0, padding: '14px 14px',
-                borderBottom: i < projectList.length - 1 ? '1px solid #ccc' : 'none',
-                alignItems: 'flex-start',
-              }}>
-                <img
-                  src={project.image}
-                  alt={project.name}
-                  style={{ width: 160, height: 105, objectFit: 'cover', flexShrink: 0, border: '1px solid #aaa' }}
-                />
-                <div style={{ flex: 1, paddingLeft: 16, display: 'flex', flexDirection: 'column', gap: 6 }}>
-                  <div style={{ fontSize: 15, fontWeight: 700, color: '#111', lineHeight: 1.35, fontFamily: mono }}>{project.name}</div>
-                  <div style={{ fontSize: 11.5, color: '#444', lineHeight: 1.6, fontFamily: mono }}>{project.desc}</div>
-                  <div style={{ display: 'flex', gap: 10, marginTop: 4 }}>
-                    {project.source && (
-                      <a href={project.source} target="_blank" rel="noopener noreferrer"
-                        style={{ fontSize: 11, color: '#555', textDecoration: 'none', border: '1px solid #888', padding: '2px 7px', background: '#e8e4d8', fontFamily: mono }}>
-                        &#128279; GitHub
-                      </a>
-                    )}
-                    {/* {project.liveLink?.trim() && (
-                      <a href={project.liveLink} target="_blank" rel="noopener noreferrer"
-                        style={{ fontSize: 11, color: '#555', textDecoration: 'none', border: '1px solid #888', padding: '2px 7px', background: '#e8e4d8', fontFamily: mono }}>
-                        &#10140; Live
-                      </a>
-                    )} */}
-                  </div>
+            {blogList.map((blog) => (
+              <a
+                key={blog.id}
+                href={blog.source}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="blog-row"
+              >
+                <img src={blog.image} alt={blog.name} className="blog-img" />
+                <div className="blog-content">
+                  <div className="blog-title">{blog.name}</div>
+                  <div className="blog-desc">{blog.desc}</div>
+                  <div className="blog-date">{blog.date}</div>
+                  <span className="blog-read-btn">🔗 Read Article</span>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
 
           {/* Custom scrollbar */}
-          <div style={{ width: 18, background: '#d4d0c0', borderLeft: '1px solid #888', display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '2px 0', flexShrink: 0, userSelect: 'none' }}>
-            <div style={s.sbBtn} onMouseDown={() => startScroll(-1)} onMouseUp={stopScroll}>▲</div>
-            <div ref={trackRef} onClick={handleTrackClick} style={{ flex: 1, width: '100%', position: 'relative', margin: '2px 0' }}>
+          <div style={{
+            width: 18, background: '#d4d0c0', borderLeft: '1px solid #888',
+            display: 'flex', flexDirection: 'column', alignItems: 'center',
+            padding: '2px 0', flexShrink: 0, userSelect: 'none',
+          }}>
+            <div style={sbBtn} onMouseDown={() => startScroll(-1)} onMouseUp={stopScroll}>▲</div>
+            <div
+              ref={trackRef}
+              onClick={handleTrackClick}
+              style={{ flex: 1, width: '100%', position: 'relative', margin: '2px 0' }}
+            >
               <div
                 ref={thumbRef}
                 onMouseDown={handleThumbMouseDown}
-                style={{ width: 13, background: '#f0e8a0', border: '1px solid #888', position: 'absolute', left: 2, cursor: 'grab', height: 70, top: 0 }}
+                style={{
+                  width: 13, background: '#f0e8a0', border: '1px solid #888',
+                  position: 'absolute', left: 2, cursor: 'grab', height: 70, top: 0,
+                }}
               />
             </div>
-            <div style={s.sbBtn} onMouseDown={() => startScroll(1)} onMouseUp={stopScroll}>▼</div>
+            <div style={sbBtn} onMouseDown={() => startScroll(1)} onMouseUp={stopScroll}>▼</div>
           </div>
-
         </div>
 
         {/* Footer */}
-        <div style={{ borderTop: '1px solid #aaa', padding: '4px 10px', fontSize: 11, color: '#666', fontFamily: mono, background: '#f0ede0' }}>
-          {projectList.length} items
+        <div style={{
+          borderTop: '1px solid #aaa',
+          padding: '4px 10px',
+          fontSize: 10,
+          color: '#888',
+          fontFamily: mono,
+          background: '#f0ede0',
+          display: 'flex',
+          justifyContent: 'space-between',
+        }}>
+          <span>{blogList.length} items</span>
+          {/* <span>☼ NEWSROOM</span> */}
         </div>
       </div>
-    // </div>
+    </>
   )
 }

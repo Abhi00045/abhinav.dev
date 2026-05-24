@@ -35,6 +35,10 @@ export default function RootLayout({
           src="https://cloud.umami.is/script.js"
           data-website-id="1c44c067-a3fa-43fd-8760-67e56669e164"
         />
+        <link
+          href="https://fonts.googleapis.com/css2?family=VT323&family=Special+Elite&display=swap"
+          rel="stylesheet"
+        />
       </head>
 
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>

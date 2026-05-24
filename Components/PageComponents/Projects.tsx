@@ -244,14 +244,14 @@ export default function Projects() {
     // <div style={{ display: 'flex', justifyContent: 'center', padding: '32px 16px', background: '#f5c6c6', fontFamily: mono }}>
       <div style={{ width: 580, background: '#f5f5dc', border: '1.5px solid #555', boxShadow: '4px 4px 0 #aaa', display: 'flex', flexDirection: 'column' }}>
 
-        {/* Titlebar */}
+        {/* Titlebar
         <div style={{ background: '#f0ede0', borderBottom: '1px solid #aaa', padding: '5px 10px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexShrink: 0 }}>
           <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
             <button style={s.btn} onClick={() => setVisible(false)}>✕</button>
             <button style={s.btn}>🔔 Get the newsletter</button>
           </div>
           <span style={{ fontFamily: 'Georgia, serif', fontWeight: 900, fontSize: 16, letterSpacing: 2, color: '#111' }}>PROJECTS</span>
-        </div>
+        </div> */}
 
         {/* Body */}
         <div style={{ display: 'flex', flexDirection: 'row', height: 460 }}>

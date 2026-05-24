@@ -170,14 +170,14 @@ export default function Aboutme() {
 
       <section id="aboutme" className="abhi-about-wrapper">
         <div className="abhi-dialog">
-          <div className="abhi-titlebar">
+          {/* <div className="abhi-titlebar">
             <button className="abhi-close-btn">✕</button>
             <span className="abhi-window-title">{NameShort} &nbsp;/&nbsp; ABOUT</span>
-          </div>
+          </div> */}
           <div className="abhi-body">
             <div className="abhi-left">
               <div className="abhi-bio-text">
-                <p>Hey, I am <strong>{NameShort}</strong> — a passionate{" "}
+                <p>Hey, I am <strong>{NameShort}</strong> a passionate{" "}
                   <strong>{selfRole}</strong> obsessed with shipping fast,
                   designing clean, and learning constantly.</p>
                 <p>{shortBio}</p>
@@ -185,14 +185,14 @@ export default function Aboutme() {
                   app, I bring the same energy: thoughtful architecture,
                   pixel-perfect UI, and coffee-fuelled curiosity.</p>
               </div>
-              <div className="abhi-highlights">
+              {/* <div className="abhi-highlights">
                 {highlights.map((h, i) => (
                   <div className="abhi-highlight-row" key={i}>
                     <span>🌴</span>
                     <span>{h}</span>
                   </div>
                 ))}
-              </div>
+              </div> */}
               <a href="https://github.com/Abhi00045"
                 target="_blank"
                 rel="noopener noreferrer"
