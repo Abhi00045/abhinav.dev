@@ -25,10 +25,17 @@ export default function Home() {
 
   return (
     <>
-      <div className="min-h-screen p-3.5 bg-black bg-cover bg-center bg-no-repeat bg-fixed">
+      <div className="min-h-screen"
+       style={{
+          backgroundColor: '#f2c4c4',
+          backgroundImage: 'radial-gradient(#d98a8a 1px, transparent 1px)',
+          backgroundSize: '12px 12px',
+          minHeight: '100vh',
+        }}
+      >
         <Nav />
         {/* <Player/> */}
-        <main className="max-w-5xl mx-auto pb-24">
+        <main>
           <HomePage />
         </main>
         {/* //letsgo */}
