@@ -1,0 +1,440 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&display=swap');
+
+.about2 {
+  width: 100%;
+  min-height: 900px;
+  padding: 10px;
+  /* background: #f4f1ea; */
+  color:whitesmoke;
+  overflow: hidden;
+}
+
+
+/* =================================
+   HEADLINE
+================================= */
+
+.about2-heading {
+  width: min(1400px, calc(100% - 100px));
+  margin: 0 auto;
+
+  font-family: "Manrope", sans-serif;
+  font-size: 58px;
+  font-weight: 500;
+
+  line-height: 1;
+  letter-spacing: -0.055em;
+}
+
+.heading-main {
+  color: whitesmoke;
+}
+
+.heading-muted {
+  color:#662c52;
+}
+
+.heading-year {
+  color: #744463;
+
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 7px;
+}
+
+
+/* =================================
+   TIMELINE AREA
+================================= */
+
+.timeline {
+  position: relative;
+
+  width: 100%;
+  height: 100px;
+
+  /* margin-top: 20px; */
+}
+
+
+/* =================================
+   HORIZONTAL LINE
+================================= */
+
+.timeline::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  top: 315px;
+
+  height: 1px;
+
+  background: #2f2e2e;
+}
+
+
+/* =================================
+   TIMELINE ITEMS
+================================= */
+
+.timeline-item {
+  position: absolute;
+
+  top: 300px;
+
+  width: 120px;
+  height: 250px;
+}
+
+
+/* Large spacing */
+
+.item-2003 {
+  left: 9%;
+}
+
+.item-2020 {
+  left: 35%;
+}
+
+.item-2021 {
+  left: 60%;
+}
+
+.item-2025 {
+  left: 88%;
+}
+
+
+/* =================================
+   BUTTON
+================================= */
+
+.timeline-trigger {
+  position: absolute;
+
+  top: 0;
+  left: 50%;
+
+  width: 105px;
+  height: 38px;
+
+  padding: 0;
+
+  transform: translateX(-50%);
+
+  border: 1px solid #292724;
+  border-radius: 7px;
+
+  background: #d8d6d1;
+  color: #292724;
+
+  font-family: "Manrope", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+  z-index: 20;
+}
+
+
+/* Connector from button to timeline */
+
+.timeline-trigger::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  top: 37px;
+
+  width: 1px;
+  height: 19px;
+
+  background: #292724;
+}
+
+
+/* Hover */
+
+.timeline-trigger:hover,
+.timeline-trigger:focus-visible {
+  background: #292724;
+  color: #f4f1ea;
+
+  transform:
+    translateX(-50%)
+    translateY(-3px);
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+
+  outline: none;
+}
+
+
+/* =================================
+   YEAR
+================================= */
+
+.year {
+  position: absolute;
+
+  left: 50%;
+  top: 70px;
+
+  transform: translateX(-50%);
+
+  white-space: nowrap;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 15px;
+  font-weight: 400;
+
+  color: #77736d;
+}
+
+
+/* =================================
+   PHOTO CARD
+================================= */
+
+.timeline-card {
+  position: absolute;
+
+  left: 50%;
+  bottom: 105px;
+
+  width: 200px;
+
+  transform:
+    translateX(-50%)
+    translateY(35px)
+    scale(0.92);
+
+  opacity: 0;
+  visibility: hidden;
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.35s ease,
+    transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    visibility 0.35s ease;
+
+  z-index: 50;
+}
+
+
+/* =================================
+   PHOTO
+================================= */
+
+.timeline-card img {
+  display: block;
+
+  width: 200px;
+  height: 200px;
+
+  object-fit: cover;
+
+  border-radius: 24px;
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.14);
+}
+
+
+/* =================================
+   SHOW PHOTO ON HOVER
+================================= */
+
+.timeline-trigger:hover .timeline-card,
+.timeline-trigger:focus-visible .timeline-card {
+  opacity: 1;
+  visibility: visible;
+
+  transform:
+    translateX(-50%)
+    translateY(0)
+    scale(1);
+}
+
+
+/* =================================
+   PHOTO INFORMATION
+================================= */
+
+.timeline-info {
+  margin-top: 12px;
+
+  text-align: left;
+
+  font-family: "Manrope", sans-serif;
+}
+
+.timeline-info strong {
+  display: block;
+
+  font-size: 18px;
+  font-weight: 500;
+
+  color: #292724;
+}
+
+.timeline-info p {
+  margin: 4px 0 0;
+
+  font-size: 12px;
+  line-height: 1.5;
+
+  color: #77736d;
+}
+
+
+/* =================================
+   PHOTO ROTATIONS
+================================= */
+
+.item-2003 .timeline-card {
+  transform:
+    translateX(-50%)
+    translateY(35px)
+    rotate(-6deg)
+    scale(0.92);
+}
+
+.item-2020 .timeline-card {
+  transform:
+    translateX(-50%)
+    translateY(35px)
+    rotate(5deg)
+    scale(0.92);
+}
+
+.item-2021 .timeline-card {
+  transform:
+    translateX(-50%)
+    translateY(35px)
+    rotate(-4deg)
+    scale(0.92);
+}
+
+.item-2025 .timeline-card {
+  transform:
+    translateX(-50%)
+    translateY(35px)
+    rotate(6deg)
+    scale(0.92);
+}
+
+
+/* =================================
+   HOVER ROTATIONS
+================================= */
+
+.item-2003 .timeline-trigger:hover .timeline-card,
+.item-2003 .timeline-trigger:focus-visible .timeline-card {
+  transform:
+    translateX(-50%)
+    translateY(0)
+    rotate(-2deg)
+    scale(1);
+}
+
+.item-2020 .timeline-trigger:hover .timeline-card,
+.item-2020 .timeline-trigger:focus-visible .timeline-card {
+  transform:
+    translateX(-50%)
+    translateY(0)
+    rotate(2deg)
+    scale(1);
+}
+
+.item-2021 .timeline-trigger:hover .timeline-card,
+.item-2021 .timeline-trigger:focus-visible .timeline-card {
+  transform:
+    translateX(-50%)
+    translateY(0)
+    rotate(-1deg)
+    scale(1);
+}
+
+.item-2025 .timeline-trigger:hover .timeline-card,
+.item-2025 .timeline-trigger:focus-visible .timeline-card {
+  transform:
+    translateX(-50%)
+    translateY(0)
+    rotate(2deg)
+    scale(1);
+}
+
+
+/* =================================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 900px) {
+
+  .about2-heading {
+    width: calc(100% - 50px);
+    font-size: 40px;
+  }
+
+  .item-2003 {
+    left: 8%;
+  }
+
+  .item-2020 {
+    left: 34%;
+  }
+
+  .item-2021 {
+    left: 62%;
+  }
+
+  .item-2025 {
+    left: 88%;
+  }
+
+  .timeline-card {
+    width: 170px;
+  }
+
+  .timeline-card img {
+    width: 170px;
+    height: 170px;
+  }
+}
+
+
+@media (max-width: 650px) {
+
+  .about2 {
+    min-width: 800px;
+  }
+
+  .about2-heading {
+    width: calc(100% - 40px);
+    font-size: 34px;
+  }
+
+  .timeline {
+    margin-top: 70px;
+  }
+}
